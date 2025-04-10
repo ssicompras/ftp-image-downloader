@@ -24,10 +24,10 @@ jobs:
         sdk-version: '30.0.3'
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleRelease
 
     - name: Upload APK as artifact
       uses: actions/upload-artifact@v2
       with:
         name: ftp-downloader-apk
-        path: app/build/outputs/apk/release/app-release.apk
+        path: app/build/outputs/apk/release/*.apk
